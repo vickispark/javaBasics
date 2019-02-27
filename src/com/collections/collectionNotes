@@ -1,0 +1,111 @@
+11) synchronizing java.util.LinkedList in java
+We can synchronize linkedList by using Collections’s class synchronizedList method.
+List list = Collections.synchronizedList(linkedList);
+Now, no 2 threads can access same instance of list concurrently in java.
+
+What is hierarchy of LinkedList in java?
+-java.lang.Object
+ -java.util.AbstractCollection
+  -java.util.AbstractList
+   -java.util.AbstractSequentialList<E>
+    -java.util.LinkedList<E>
+    
+     java.util.LinkedList
+java.util.LinkedList is implemented using Doubly-linked list. It implements java.util.List and Deque interfaces. 
+A linked list is a data structure consisting of a group of nodes which together represent a sequence. Under the simplest form, 
+each node is composed of a data and a reference (in other words, a link) to the next node in the sequence in java.
+
+    // iterator returned by LinkedList is fail fast in java. Means any structural modification made to LinkedList like adding or removing elements during Iteration will throw java.util.ConcurrentModificationException.
+	    // Removing element by using iterator is allowed.
+	toArray() method converts and returns all elements of list in array. (Sequence of elements is maintained) in java
+
+
+clear() method removes all elements from list in java.
+
+
+
+
+/\/\/\/\/\SET
+
+		    //Set implementations does not provide any such get method to get element on specified index in java.
+
+What is hierarchy of HashSet in java?
+-java.lang.Object
+ -java.util.AbstractCollection
+  -java.util.AbstractSet
+   -java.util.HashSet
+   
+   10) synchronizing java.util.HashSet in java
+We can synchronize hashSet by using Collections’s class synchronizedList method in java.
+Set synchronizedSet = Collections.synchronizedSet(set);
+Now, no 2 threads can access same instance of set concurrently in java.
+
+
+HashSet  is implementation of the java.util.Set interface in java.
+
+
+HashSet is internally implemented using java.util.HashMap in java.
+
+
+Duplicate elements - HashSet does not allows to store duplicate elements in java.
+
+
+Null elements - One null element can be added in HashSet in java.
+Insertion order - HashSet  does not maintains insertion order in java.
+
+
+
+ synchronized - HashSet is not synchronized (because 2 threads on same HashSet object can access it at same time) in java. 
+
+
+Performance - HashSet is not synchronized, hence its operations are faster as compared to some other synchronized implementation of Set interface in java. 
+
+
+13) When to use java.util.HashSet >
+HashSet can be used when we don’t want to store duplicate elements in java.
+
+
+HashSet can be used when we want to store only one null in java.
+
+
+We must prefer HashSet for when add and remove operations are more as compared to get operations in java, and
+
+
+HashSet can be used when we are not working in multithreading environment in java.
+
+
+14) What is Load Factor in java ?
+Default load factor is 0.75
+That means when set will be 75% filled,  it’s capacity will be doubled.
+
+
+Example in java >
+Initially when number of elements is 0,  default capacity =16, Load Factor =0.75, HashSet is 0% full.
+
+
+///////MAP
+
+3) What is hierarchy of HashMap in java?
+-java.lang.Object
+ -java.util.AbstractMap
+  -java.util.concurrent.HashMap 
+
+
+13) synchronizing java.util.HashMap in java 
+We can synchronize hashMap by using Collections’s class synchronizedList method.
+Map synchronizedMap = Collections.synchronizedMap(hashMap);
+Now, no 2 threads can access same instance of map concurrently.
+
+
+Lets look at Map implementations -
+
+HashMap allows one null key and many null values.
+LinkedHashMap allows one null key and many null values.
+
+TreeMap doesn't allow null key but allow many null values.
+
+Hashtable doesn't allow null key or null values.
+ConcurrentHashMap doesn't allow null key or null values.
+ConcurrentSkipListMap doesn't allow null key or null values.
+
+
